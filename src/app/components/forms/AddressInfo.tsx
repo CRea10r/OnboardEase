@@ -34,7 +34,7 @@ const AddressForm: React.FC<AddressInfoFromProps> = ({ onNext, onBack }) => {
     setValue("city", city);
     setValue("state", state);
     setValue("pincode", pincode);
-  }, [setValue, addressInfo]);
+  }, [setValue, address, landmark, city, state, pincode]);
 
   const handlePrev = (): void => {
     onBack();

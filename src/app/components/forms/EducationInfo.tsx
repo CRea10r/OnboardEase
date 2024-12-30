@@ -25,12 +25,12 @@ const EducationInfoForm: React.FC<EduInfoFormProps> = ({ onNext, onBack }) => {
 
  const educationInfo = useSelector((state: { educationInfo: EducationInfoState }) => state.educationInfo);
   
-  const { tenthPercentage, twelfthPercentage, tenthMarksheet, twelfthMarksheet } = educationInfo;
+  const { tenthPercentage, twelfthPercentage } = educationInfo;
 
   useEffect(() => {
     setValue("tenthPercentage", tenthPercentage || "");
     setValue("twelfthPercentage", twelfthPercentage || "");
-  }, [setValue, educationInfo]);
+  }, [setValue, tenthPercentage, twelfthPercentage]);
 
 
   const onSubmit: SubmitHandler<IFormInput> = (data) => {

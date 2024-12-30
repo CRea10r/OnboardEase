@@ -29,7 +29,7 @@ const PersonalInfoForm = ({ onNext }: { onNext: () => void }) => {
       setValue("lastName", lastName);
       setValue("phone", phone);
       setValue("email", email);
-    }, [setValue, personalInfo]);
+    }, [setValue, firstName, lastName, phone, email]);
 
   const onSubmit: SubmitHandler<IFormInput> = (data) => {
 

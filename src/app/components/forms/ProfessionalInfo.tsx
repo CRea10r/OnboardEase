@@ -1,11 +1,10 @@
 "use client";
-import React, { use, useEffect } from "react";
+import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { ProfInfoState, updateFields } from "@/app/features/professionalInfo/profInfoSlice";
 import Button from "../ui/Button";
-import { useForm, SubmitHandler, set } from "react-hook-form";
+import { useForm, SubmitHandler } from "react-hook-form";
 import InputField from "../ui/InputField";
-import { PersonalInfoState } from "@/app/features/personalInfo/personalInfoSlice";
 
 interface IFormInput {
   personalUse: string;
@@ -28,7 +27,7 @@ const ProfessionalInfoForm: React.FC<ProfInfoFormProps> = ({ onNext, onBack }) =
   useEffect(() => {
    setValue("personalUse", personalUse);
    setValue("occupation", occupation);
-  }, [setValue, profInfo]);
+  }, [setValue, personalUse, occupation]);
   
 
   const handlePrev = (): void => {
